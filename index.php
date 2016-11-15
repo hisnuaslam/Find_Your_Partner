@@ -18,7 +18,7 @@
 ?>
 
 
-<title>Wisuda Online UNS</title>
+<title>Find Your Partner</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -43,9 +43,11 @@
     <!--Title Menu-->
     <div class="title-menu">
         <!--Title Page-->
-        <div class="col-lg-9"><h1>Hi, Aslam !</h1></div><!--/Title Page-->
-        <!--Title Direction-->
+        <div class="col-lg-9"><h1>Hi, Aslam !</h1></div>
         
+        <!--/Title Page-->
+        <!--Title Direction-->
+       
        
 
     </div><!--Title Menu-->

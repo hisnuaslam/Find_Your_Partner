@@ -1,1 +1,1 @@
-<?php echo "berhasil lihat partner" ?>
+<?php echo "berhasil lihat partner!" ?>

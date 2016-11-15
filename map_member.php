@@ -11,25 +11,14 @@
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script>
 $("#myModal").modal('hide');
+
+ 
       function initMap() {
         var uluru = {lat: -2.063, lng: 118.044};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 5,
           center: uluru
         });
-        
-      //   for (i = 1; i <5; i++) {
-      //   var id= i;
-      //   var latid="lat".concat(i);
-      //   var lngid="lng".concat(i);
-        
-      //   var ltd = document.getElementById(latid).value;
-      //   var lng = document.getElementById(lngid).value;
-      //   var koor= {lat: ltd, lng: lng};
-      //   window.alert(ltd);
-      //   placeMarker(koor);
-      // }
-
         // var marker1 = new google.maps.Marker({
         //   position: pati,
         //   map: map,
@@ -38,7 +27,6 @@ $("#myModal").modal('hide');
 //place marker use code below
         google.maps.event.addListener(map, 'click', function(event) {
         placeMarker(event.latLng);
-
         // console.log(event.latLng);
         });
 
@@ -51,7 +39,7 @@ $("#myModal").modal('hide');
           //make everytime you add marker to center maps
           map.setCenter(marker.position);
           marker.setMap(map);
-          // marker.setTitle('Tempat ini udah di booking ^^');
+          marker.setTitle('Tempat ini udah di booking ^^');
 
 
 // var deskripsiSurakarta = '<div id="content">'+
