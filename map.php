@@ -18,18 +18,6 @@ $("#myModal").modal('hide');
           center: uluru
         });
         
-      //   for (i = 1; i <5; i++) {
-      //   var id= i;
-      //   var latid="lat".concat(i);
-      //   var lngid="lng".concat(i);
-        
-      //   var ltd = document.getElementById(latid).value;
-      //   var lng = document.getElementById(lngid).value;
-      //   var koor= {lat: ltd, lng: lng};
-      //   window.alert(ltd);
-      //   placeMarker(koor);
-      // }
-
         // var marker1 = new google.maps.Marker({
         //   position: pati,
         //   map: map,
