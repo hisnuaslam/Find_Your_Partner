@@ -29,7 +29,7 @@
         <hr>
     </div><!--Title Menu-->
 
-<?php include_once './map.php'; ?>
+<?php include_once './map_leader.php'; ?>
     <!--Content Page-->
 
     <!--content-menu-->
@@ -49,40 +49,35 @@
 
 
 <script>
-function showUser(str) {
-    // if (str == "all") {
-    //    if (window.XMLHttpRequest) {
-    //         // code for IE7+, Firefox, Chrome, Opera, Safari
-    //         xmlhttp = new XMLHttpRequest();
-    //     } else {
-    //         // code for IE6, IE5
-    //         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    //     }
-    //     xmlhttp.onreadystatechange = function() {
-    //         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-    //             document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
-    //         }
-    //     };
-    //     xmlhttp.open("GET","datakordinat.php",true);
-    //     xmlhttp.send();
-       
-    // } else {
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
-            }
-        };
-        xmlhttp.open("GET","datakoordinat.php?q="+str,true);
-        xmlhttp.send();
-    }
-// }
+window.onload = loadMarker();
+
+function loadMarker() {
+    $.ajax('datakoordinat_leader.php', {
+            'type':'GET'
+        })
+        .done(function(data) {
+            var tabel = "<div class='table-responsive'><table cellpadding='2' cellspacing='2' class='data_table'>"+
+                        "<tr id='tr'>" +
+                        "<td>ID</td>" +
+                        "<td> Latitude</td>" +
+                        "<td>Longitude</td>" +
+                        "</tr>";
+            for (var i = 0; i < data.length; i++) {
+                tabel += "<tr id='tr2'>";
+                tabel += "<td>" + data[i].id + "</td>";
+                tabel += "<td>" + data[i].latitude + "</td>";
+                tabel += "<td>" + data[i].longitude + "</td>";
+                tabel += "</tr>";
+                var marker = placeMarker({lat: parseFloat(data[i].latitude), lng: parseFloat(data[i].longitude)});
+                // console.log(marker);
+                addClickListener(marker);
+            };
+            // podo wae
+            // document.getElementById('txtHint').innerHTML = tabel;
+            $('#txtHint').html(tabel);
+        });
+}
+
 </script>
 </head>
 

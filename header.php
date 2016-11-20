@@ -18,6 +18,36 @@ and open the template in the editor.
         <link href="css/digilib-uns.css" rel="stylesheet">
         <!--Font from Google-->
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
+        <style>
+.data_table
+{
+  margin:auto;
+  border: 1px #333 solid;
+  width: 100%;
+}
+.data_table #tr
+{
+  font-face: segwpl_font;
+  background-color:#a2c4ff;
+  font-size:14px;
+  color:black;
+  text-align:center;
+  
+}
+.data_table #tr2
+{
+  font-face: segwpl_font;
+  font-size:14px;
+  color:black;
+  text-align:center;
+  
+}
+.data_table td
+{
+  text-align:center;
+border-bottom: 1px solid #999;
+}
+</style>
     </head>
     <body>
         <!--header-->

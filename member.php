@@ -31,21 +31,85 @@
 
 <?php include_once './map_member.php'; ?>
     <!--Content Page-->
+<script>
+window.onload = loadMarker();
 
-    <!--content-menu-->
-<!-- <div class="col-lg-3 content-menu">
-    <ul class="nav nav-pills nav-stacked collapsed">
-       
-        <li role="presentation" class="active" >
-            <a href="#" ><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>Mahasiswa</a>
-            <ul class="nav nav-stacked">
-                <li class="second-nav "><a href="verifikasidokumen.php">Verifikasi Dokumen</a></li>
-                <li class="second-nav"><a href="dokumenlolosverifikasi.php">Daftar Dokumen Lolos Verifikasi</a></li>
-                <li class="second-nav"><a href="logout.php">Logout</a></li>
-            </ul>
-        </li> 
-    </ul>
-</div> -->
+function loadMarker() {
+    $.ajax('datakoordinat_member.php', {
+            'type':'GET'
+        })
+        .done(function(data) {
+            var tabel = "<div class='table-responsive'><table cellpadding='2' cellspacing='2' class='data_table'>"+
+                        "<tr id='tr'>" +
+                        "<td>ID</td>" +
+                        "<td> Latitude</td>" +
+                        "<td>Longitude</td>" +
+                        "<td>Kota</td>" +
+                        "<td>Ketua</td>" +
+                        "<td>Lokasi</td>" +
+                        "</tr>";
+            for (var i = 0; i < data.length; i++) {
+                tabel += "<tr id='tr2'>";
+                tabel += "<td>" + data[i].id + "</td>";
+                tabel += "<td>" + data[i].latitude + "</td>";
+                tabel += "<td>" + data[i].longitude + "</td>";
+                tabel += "<td>" + data[i].kota + "</td>";
+                tabel += "<td>" + data[i].ketua + "</td>";
+                tabel += "<td>" + data[i].lokasi + "</td>";
+                tabel += "</tr>";
+                var marker = placeMarker({lat: parseFloat(data[i].latitude), lng: parseFloat(data[i].longitude)});
+                // console.log(marker);
+                addClickListener(marker);
+            };
+            // podo wae
+            // document.getElementById('txtHint').innerHTML = tabel;
+            $('#txtHint').html(tabel);
+        });
+}
+
+</script>
+</head>
+
+<body id="home">
+
+  
+<!-- header area -->
+
+<!-- colored section -->
+<section id="order">
+    <div class="wrapper clearfix">
+    
+<div id="container">
+ <h2>Liat Latitude Longitude</h2>
+
+<select name="cucian" onchange="showUser(this.value)">
+  <option value="all">Liat</option>
+  <option value="all">All</option>
+<!--   <option value="Finish">Finish</option>
+  <option value="OnProcess">On Process</option>
+  <option value="OnWay">On Way</option> -->
+</select>
+
+<br>
+<div id="txtHint"><b></b></div>
+ </div>
+
+</div>
+
+</section><!-- #end colored section -->
+
+<!-- footer area -->    
+
+<!-- jQuery -->
+
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.0.min.js">\x3C/script>')</script>
+
+
+
+
+
+
+
 <div class="col-lg-9 ">
 
     <div class="col-lg-12">
