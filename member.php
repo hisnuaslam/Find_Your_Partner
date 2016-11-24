@@ -47,6 +47,9 @@ function loadMarker() {
                         "<td>Kota</td>" +
                         "<td>Ketua</td>" +
                         "<td>Lokasi</td>" +
+                        "<td>Proker 1</td>" +
+                        "<td>Proker 2</td>" +
+                        "<td>Proker 3</td>" +
                         "</tr>";
             for (var i = 0; i < data.length; i++) {
                 tabel += "<tr id='tr2'>";
@@ -56,6 +59,9 @@ function loadMarker() {
                 tabel += "<td>" + data[i].kota + "</td>";
                 tabel += "<td>" + data[i].ketua + "</td>";
                 tabel += "<td>" + data[i].lokasi + "</td>";
+                tabel += "<td>" + data[i].proker1 + "</td>";
+                tabel += "<td>" + data[i].proker2 + "</td>";
+                tabel += "<td>" + data[i].proker3 + "</td>";
                 tabel += "</tr>";
                 var marker = placeMarker({lat: parseFloat(data[i].latitude), lng: parseFloat(data[i].longitude)});
                 // console.log(marker);

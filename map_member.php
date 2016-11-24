@@ -19,25 +19,25 @@ $("#myModal").modal('hide');
           center: uluru
         });
         
-        whitebox_window = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Surakarta</h1>'+
-            '<div id="bodyContent">'+
-            '<p><b>Ketua </b>,: Hisnuaslam</p>'+
-            '<p><b>Lokasi </b>,: Ds Ngoresan Kec. Jebres</p>'+
-            '<p><b>Proker </b>,:</p>'+
-            '<p>- Pertanian : Irigasi sawah</p>'+
-            '<p>- Kesehatan : Penyuluhan kesehatan tentang bahaya penyakit malaria</p>'+
-            '<p>- Teknologi : Pembuatan sistem pengadaan barang di kantor kecamatan</p>'+
-            '</div>'+
-            '<button type="button"><a href="join.php">Join Now!</a></button>'+' '+' '+
-            '<button type="button"><a href="lihat_partner.php">Lihat Partnermu!</a></button>'
-            '</div>';
-// // kasih pop up ke marker
-        infowindow = new google.maps.InfoWindow({
-          content: whitebox_window
-        });
+//         whitebox_window = '<div id="content">'+
+//             '<div id="siteNotice">'+
+//             '</div>'+
+//             '<h1 id="firstHeading" class="firstHeading">Surakarta</h1>'+
+//             '<div id="bodyContent">'+
+//             '<p><b>Ketua </b>,: Hisnuaslam</p>'+
+//             '<p><b>Lokasi </b>,: Ds Ngoresan Kec. Jebres</p>'+
+//             '<p><b>Proker </b>,:</p>'+
+//             '<p>- </p>'+
+//             '<p>- </p>'+
+//             '<p>- </p>'+
+//             '</div>'+
+//             '<button type="button"><a href="join.php">Join Now!</a></button>'+' '+' '+
+//             '<button type="button"><a href="lihat_partner.php">Lihat Partnermu!</a></button>'
+//             '</div>';
+// // // kasih pop up ke marker
+//         infowindow = new google.maps.InfoWindow({
+//           content: whitebox_window
+//         });
 
 //place marker use code below
         // google.maps.event.addListener(map, 'click', function(event) {
@@ -114,9 +114,9 @@ $("#myModal").modal('hide');
             '<p><b>Ketua </b>,: ' + data[0].ketua + '</p>'+
             '<p><b>Lokasi </b>,: ' + data[0].lokasi + '</p>'+
             '<p><b>Proker </b>,:</p>'+
-            '<p>- Pertanian : Irigasi sawah</p>'+
-            '<p>- Kesehatan : Penyuluhan kesehatan tentang bahaya penyakit malaria</p>'+
-            '<p>- Teknologi : Pembuatan sistem pengadaan barang di kantor kecamatan</p>'+
+            '<p>- ' + data[0].proker1 + '</p>'+
+            '<p>- ' + data[0].proker2 + '</p>'+
+            '<p>- ' + data[0].proker3 + '</p>'+
             '</div>'+
             '<button type="button"><a href="join.php">Join Now!</a></button>'+' '+' '+
             '<button type="button"><a href="lihat_partner.php">Lihat Partnermu!</a></button>'
