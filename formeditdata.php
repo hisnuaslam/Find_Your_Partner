@@ -23,7 +23,17 @@
 
         <div class="form-group">
         <label>Alamat Daerah<br><input type="text" name="falamat"></label></div>
-    </div>
+
+        <div class="form-group">
+        <label>Proker 1<br><input type="text" name="fproker1"></label></div>
+
+        <div class="form-group">
+        <label>Proker 2<br><input type="text" name="fproker2"></label></div>
+
+        <div class="form-group">
+        <label>Proker 3<br><input type="text" name="fproker3"></label></div>
+
+      </div>
 
     <div class="button-section">
      <input type="submit" name="query" value="Submit"><br><br><br>
@@ -31,13 +41,6 @@
     </div>
 </form>
       </div>
-<!-- 
-      <form method="POST" action="queryisidata.php">
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" name="query" value="Submit">Save changes</button>
-      </div>
-      </form> -->
     </div>
   </div>
 </div>

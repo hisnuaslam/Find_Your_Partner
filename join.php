@@ -1,3 +1,3 @@
+<?php include("koneksiall.php"); ?>
 
-<?php echo "
-Kamu berhasil Join..^^!"; ?>
+<?php echo "berhasil join" ?>

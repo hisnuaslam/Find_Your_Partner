@@ -43,7 +43,7 @@
     <!--Title Menu-->
     <div class="title-menu">
         <!--Title Page-->
-        <div class="col-lg-9"><h1>Hi, Aslam !</h1></div>
+        <div class="col-lg-9"><h1>Selamat Datang !</h1></div>
         
         <!--/Title Page-->
         <!--Title Direction-->
