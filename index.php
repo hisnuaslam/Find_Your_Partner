@@ -43,78 +43,65 @@
     <!--Title Menu-->
     <div class="title-menu">
         <!--Title Page-->
-        <div class="col-lg-9"><h1>Selamat Datang !</h1></div>
-        
-        <!--/Title Page-->
+        <div class="col-lg-9"><h1>Selamat Datang !</h1></div><!--/Title Page-->
         <!--Title Direction-->
-       
-       
-
-    </div><!--Title Menu-->
+        <div class="col-lg-3">
+            
+                <div class="col-lg-3"><a href="login.php"><h3>Login</h3></a></div>
+        </div><!--/Title Direction-->
     <!--Content Page-->
     <div class="col-lg-12">
         <div class="container">
-        <div class="row">
-             <div class="login">
-                
+        <!-- <div class="row"> -->
+              
 
-               
-                <?php
-                if(isset($_POST['login'])){
-                    include("koneksiall.php");
-                    
-                    $username   = $_POST['username'];
-                    $password   = $_POST['password'];
-                    $level      = $_POST['level'];
-    
-                    
-                    $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' AND password='$password'");
-                    if(mysqli_num_rows($query) == 0){
-                        echo '<div class="alert alert-danger">Upss...!!! Login gagal.</div>';
-                    }else{
-                        $row = mysqli_fetch_assoc($query);
-                        
-                        if($row['level'] == 1 && $level == 1){
-                            $_SESSION['username']=$username;
-                            $_SESSION['level']='1';
-                            header("Location: leader.php");
-                        }else if($row['level'] == 2 && $level == 2){
-                            $_SESSION['username']=$username;
-                            $_SESSION['level']='2';
-                            $_SESSION['status'] = "member.php";
 
-                            
-                        }else{
-                            echo '<div class="alert alert-danger">Upss...!!! Login gagal.</div>';
-                        }
-                    }
-                }
-                ?>
-                
-                <form role="form" action="" method="post">
-                    <div class="form-group">
-                        <input type="text" name="username" class="form-control" placeholder="Username" required autofocus />
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password" required autofocus />
-                    </div>
-                    <div class="form-group">
-                        <select name="level" class="form-control" required>
-                            <option value="">Pilih Level User</option>
-                            <option value="1">Leader</option>
-                            <option value="2">Member</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="login" class="btn btn-primary btn-block" value="Log me in" />
-                    </div>
-                    <a href="daftar.php">Klik Disini untuk mendaftar!</a>
-                </form>
-            </div>
+              <?php include_once './map_index.php'; ?>
+    <!--Content Page-->
+<script>
+window.onload = loadMarker();
 
-    
-        </div>
-    </div>
+function loadMarker() {
+    $.ajax('datakoordinat_index.php', {
+            'type':'GET'
+        })
+        .done(function(data) {
+            var tabel = "<div class='table-responsive'><table cellpadding='2' cellspacing='2' class='data_table'>"+
+                        "<tr id='tr'>" +
+                        "<td>ID</td>" +
+                        "<td> Latitude</td>" +
+                        "<td>Longitude</td>" +
+                        "<td>Kota</td>" +
+                        "<td>Ketua</td>" +
+                        "<td>Lokasi</td>" +
+                        "<td>Proker 1</td>" +
+                        "<td>Proker 2</td>" +
+                        "<td>Proker 3</td>" +
+                        "</tr>";
+            for (var i = 0; i < data.length; i++) {
+                tabel += "<tr id='tr2'>";
+                tabel += "<td>" + data[i].id + "</td>";
+                tabel += "<td>" + data[i].latitude + "</td>";
+                tabel += "<td>" + data[i].longitude + "</td>";
+                tabel += "<td>" + data[i].kota + "</td>";
+                tabel += "<td>" + data[i].ketua + "</td>";
+                tabel += "<td>" + data[i].lokasi + "</td>";
+                tabel += "<td>" + data[i].proker1 + "</td>";
+                tabel += "<td>" + data[i].proker2 + "</td>";
+                tabel += "<td>" + data[i].proker3 + "</td>";
+                tabel += "</tr>";
+                var marker = placeMarker({lat: parseFloat(data[i].latitude), lng: parseFloat(data[i].longitude)});
+                // console.log(marker);
+                addClickListener(marker);
+            };
+            // podo wae
+            // document.getElementById('txtHint').innerHTML = tabel;
+            $('#txtHint').html(tabel);
+        });
+}
+
+</script>
+    <!-- </div> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

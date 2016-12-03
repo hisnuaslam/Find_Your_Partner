@@ -23,7 +23,7 @@
         <!--Title Direction-->
         <div class="col-lg-3">
             <ol class="breadcrumb">
-                <div class="col-lg-3"><a href="logout.php">Logout</a></div>
+                <div class="col-lg-3"><h3><a href="logout.php">Logout</a></a></div>
         </div><!--/Title Direction-->
         <div class="clearfix"></div>
         <hr>
@@ -74,7 +74,7 @@ function loadMarker() {
 }
 
 </script>
-</head>
+
 
 <body id="home">
 
