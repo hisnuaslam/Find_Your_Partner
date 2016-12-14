@@ -31,3 +31,31 @@
             </tr>
             <tr>
 
+
+            <?php
+      
+      require 'koneksiall.php';
+
+      
+      
+      
+$sql="SELECT * FROM joinlokasi";
+
+
+   $result_set=mysqli_query($koneksi,$sql);
+    
+    if($result_set ){
+    while($row=mysqli_fetch_array($result_set))
+    {
+        ?>
+        <tr>
+        
+        <td><?php echo $row['nim']; ?></td>
+        <td><?php echo $row['username'] ?></td>
+        </tr>
+        <?php
+    }
+}
+    ?></table>
+        
+

@@ -121,7 +121,7 @@ $("#myModal").modal('hide');
             '<p> ' + data[0].tglscreening + '</p>'+
             '<p><b>Pengumuman Pendaftaran</b>,:</p>'+
             '<p> ' + data[0].tglpengumuman + '</p>'+
-            '<button type="button"><a href="join.php">Join Now!</a></button>'+' '+' '+
+            '<button type="button"><a href="join.php?id='+ data[0].id_map +'">Join Now!</a></button>'+' '+' '+
             '<button type="button"><a href="lihat_partner.php">Lihat Partnermu!</a></button>'
             '</div>';
         var infowindow = new google.maps.InfoWindow({

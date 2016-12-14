@@ -33,7 +33,7 @@
         <label>Tanggal Screening<br><input type="date" name="ftglscreening"></label></div>
         
         <div class="form-group">
-        <label>Tanggal Pengumuman<br><input type="date" name="ftglpengumuman"></label></div>
+        <label>Tanggal Pengumuman<br><input type="date" name="ftglpengumuman" required autofocus></label></div>
       </div>
 
       <div class="form-group">

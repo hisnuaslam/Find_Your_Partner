@@ -15,7 +15,7 @@ $data = array();
 
 while($row = mysqli_fetch_array($result)) {
     $koordinat = array(
-      'id' => $row['id'],
+      'id_map' => $row['id'],
       'latitude' => $row['latitude'],
       'longitude'=> $row['longitude'],
       'kota'=> $row['kota'],

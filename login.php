@@ -36,10 +36,12 @@
                         
                         if($row['level'] == 1 && $level == 1){
                             $_SESSION['username']=$username;
+                            $_SESSION['nim']=$row['nim'];
                             $_SESSION['level']='1';
                             header("Location: leader.php");
                         }else if($row['level'] == 2 && $level == 2){
                             $_SESSION['username']=$username;
+                            $_SESSION['nim']=$row['nim'];
                             $_SESSION['level']='2';
                             header("Location: member.php");
                         }else if($row['level'] == 3 && $level == 3){
