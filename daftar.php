@@ -47,6 +47,7 @@
                     $password   = $_POST['password'];
                     $cpass      = $_POST['passwordconfirm'];
                     $captcha    = $_POST['captcha'];
+                    $leveluser  = $_POST['leveluser'];
 
                     $sql = "SELECT * FROM user WHERE nim = '$nim'OR username = '$username' ";
 
@@ -58,7 +59,7 @@
                         if($password != $cpass || $captcha != $_SESSION["code"]) {
                             echo "<div class = 'alert alert-danger'>Password dan Confirm Password tidak Sesuai atau Captcha salah</div>";
                         } else {
-                            $sql = "INSERT INTO user VALUES ('$nim', '$username', '$password', '2', 'belumjoin')";
+                            $sql = "INSERT INTO user VALUES ('$nim', '$username', '$password', '$leveluser')";
                             $query = mysqli_query($koneksi, $sql);
 
                             if($query) {
@@ -78,13 +79,20 @@
                     <div class="form-group">
                         <input type="text" name="username" class="form-control" placeholder="Username (min 8 chars)" pattern = ".{8,}" required autofocus />
                     </div>
+
                     <div class="form-group">
                         <input type="password" name="password" class="form-control" placeholder="Password (min 8 chars)" pattern = ".{8,}" required autofocus />
                     </div>
                     <div class="form-group">
                         <input type="password" name="passwordconfirm" class="form-control" placeholder="Confirm Password" required autofocus />
                     </div>
-
+                    <div class="form-group">
+                        <select name="leveluser" class="form-control" required>
+                            <option value="">Pilih Sebagai...</option>
+                            <option value="1">Leader</option>
+                            <option value="2">Member</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                       <label for="captcha">Input Captcha <img src="captcha.php" /> </label>
                       <div>
@@ -95,8 +103,18 @@
                     <div class="form-group">
                         <input type="submit" name="daftar" class="btn btn-primary btn-block" value="Daftar" />
                     </div>
+<br><br>
 
-                    
+
+
+
+                    <!-- <div class="section"><b>Upload Foto</b></div>
+    <div class="inner-wrap">
+        <form action="uploadfoto.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" /><br>
+        <button type="submit" name="btn-upload">upload</button>
+        </form>
+    </div> -->
                    </form>
             </div>
         </div>

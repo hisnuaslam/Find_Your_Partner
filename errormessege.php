@@ -4,16 +4,16 @@
     if(isset($_SESSION['level'] )) {
         if($_SESSION['level'] == 1 )
         {
-            header('Location:loginadmin.php');
+            header('Location:leader.php');
 
         }
         elseif($_SESSION['level'] == 2)
         {
-            header('Location:loginpin.php');
+            header('Location:member.php');
         }
         elseif($_SESSION['level'] == 3)
         {
-            header('Location:loginnim.php');
+            header('Location:administrator.php');
         }
     } 
 
@@ -21,7 +21,7 @@
 ?>
 
 
-<title>Wisuda Online UNS</title>
+<title>FIND YOUR PARTNER</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>

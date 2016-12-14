@@ -8,6 +8,7 @@
             header('Location:errormessege.php');
 
         }
+        
     } 
      else{
 
@@ -23,7 +24,10 @@
         <!--Title Direction-->
         <div class="col-lg-3">
             <ol class="breadcrumb">
-                <div class="col-lg-3"><a href="logout.php">Logout</a></div>
+                <div class="col-lg-6"><a href="lihatdatadirileader.php">Lihat Data diri</a></div>
+                <div class="col-lg-6"><a href="downgrade.php">Downgrade</a></div>
+                <div class="col-lg-6"><a href=""></a></div>
+                <div class="col-lg-1"><a href="logout.php">Logout</a></div>
         </div><!--/Title Direction-->
         <div class="clearfix"></div>
         <hr>
@@ -64,9 +68,9 @@ function loadMarker() {
                         "<td>Kota</td>" +
                         "<td>Ketua</td>" +
                         "<td>Lokasi</td>" +
-                        "<td>Proker1</td>" +
-                        "<td>Proker2</td>" +
-                        "<td>Proker3</td>" +
+                        // "<td>Proker1</td>" +
+                        // "<td>Proker2</td>" +
+                        // "<td>Proker3</td>" +
 
                         "</tr>";
             for (var i = 0; i < data.length; i++) {
@@ -77,9 +81,9 @@ function loadMarker() {
                 tabel += "<td>" + data[i].kota + "</td>";
                 tabel += "<td>" + data[i].ketua + "</td>";
                 tabel += "<td>" + data[i].lokasi + "</td>";
-                tabel += "<td>" + data[i].proker1 + "</td>";
-                tabel += "<td>" + data[i].proker2 + "</td>";
-                tabel += "<td>" + data[i].proker3 + "</td>";
+                // tabel += "<td>" + data[i].proker1 + "</td>";
+                // tabel += "<td>" + data[i].proker2 + "</td>";
+                // tabel += "<td>" + data[i].proker3 + "</td>";
                 tabel += "</tr>";
                 var marker = placeMarker({lat: parseFloat(data[i].latitude), lng: parseFloat(data[i].longitude)});
                 // console.log(marker);
@@ -104,7 +108,7 @@ function loadMarker() {
     <div class="wrapper clearfix">
     
 <div id="container">
- <h2>Liat Latitude Longitude</h2>
+ <h2>Liat Info KKN yang tersedia</h2>
 
 <select name="cucian" onchange="showUser(this.value)">
   <option value="all">Liat</option>

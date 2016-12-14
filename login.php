@@ -10,6 +10,10 @@
         {
             header('Location:member.php');
         }
+        elseif($_SESSION['level'] == 3)
+        {
+            header('Location:administrator.php');
+        }
         
     } 
 
@@ -37,9 +41,11 @@
                         }else if($row['level'] == 2 && $level == 2){
                             $_SESSION['username']=$username;
                             $_SESSION['level']='2';
-                            $_SESSION['status'] = "member.php";
-
-                            
+                            header("Location: member.php");
+                        }else if($row['level'] == 3 && $level == 3){
+                            $_SESSION['username']=$username;
+                            $_SESSION['level']='3';
+                            header("Location: administrator.php");
                         }else{
                             echo '<div class="alert alert-danger">Upss...!!! Login gagal.</div>';
                         }
@@ -102,6 +108,7 @@
                     <div class="form-group">
                         <select name="level" class="form-control" required>
                             <option value="">Pilih Level User</option>
+                            <option value="3">Administrator</option>
                             <option value="1">Leader</option>
                             <option value="2">Member</option>
                         </select>

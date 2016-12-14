@@ -4,7 +4,7 @@
         width: 100%;
        }
     </style>
-            <h3>Find Your Partner Here ^^!</h3>
+            <h3><!-- Find Your Partner Here ^^! --></h3>
     <div id="map"></div>
     <div id="current">Belum ada Kordinat</div>
 

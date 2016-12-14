@@ -4,7 +4,7 @@
         width: 100%;
        }
     </style>
-            <h3>Find Your Partner Here ^^!</h3>
+            <h3><!-- Find Your Partner Here ^^! --></h3>
     <div id="map"></div>
     <div id="current">Belum ada Kordinat</div>
 
@@ -113,10 +113,10 @@ $("#myModal").modal('hide');
             '<div id="bodyContent">'+
             '<p><b>Ketua </b>,: ' + data[0].ketua + '</p>'+
             '<p><b>Lokasi </b>,: ' + data[0].lokasi + '</p>'+
-            '<p><b>Proker </b>,:</p>'+
-            '<p>- ' + data[0].proker1 + '</p>'+
-            '<p>- ' + data[0].proker2 + '</p>'+
-            '<p>- ' + data[0].proker3 + '</p>'+
+            '<p><b>Tanggal Mulai Pendaftaran </b>,:' + data[0].tglmulai+'</p>'+
+            '<p><b>Batas Akhir Pendaftaran </b>,:' + data[0].tglakhir + '</p>'+
+            '<p><b>Tanggal Screening </b>,:' + data[0].tglscreening + '</p>'+
+            '<p><b>Pengumuman Pendaftaran</b>,:' + data[0].tglpengumuman + '</p>'
             '</div>'+
             
             '</div>';

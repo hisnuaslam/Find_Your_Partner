@@ -11,7 +11,10 @@
         {
             header('Location:member.php');
         }
-        
+        elseif($_SESSION['level'] == 3)
+        {
+            header('Location:administrator.php');
+        }
     } 
 
    
@@ -43,7 +46,7 @@
     <!--Title Menu-->
     <div class="title-menu">
         <!--Title Page-->
-        <div class="col-lg-9"><h1>Selamat Datang !</h1></div><!--/Title Page-->
+        <div class="col-lg-9"><h1><!-- Selamat Datang ! --></h1></div><!--/Title Page-->
         <!--Title Direction-->
         <div class="col-lg-3">
             
@@ -74,9 +77,9 @@ function loadMarker() {
                         "<td>Kota</td>" +
                         "<td>Ketua</td>" +
                         "<td>Lokasi</td>" +
-                        "<td>Proker 1</td>" +
-                        "<td>Proker 2</td>" +
-                        "<td>Proker 3</td>" +
+                        // "<td>Proker 1</td>" +
+                        // "<td>Proker 2</td>" +
+                        // "<td>Proker 3</td>" +
                         "</tr>";
             for (var i = 0; i < data.length; i++) {
                 tabel += "<tr id='tr2'>";
@@ -86,9 +89,9 @@ function loadMarker() {
                 tabel += "<td>" + data[i].kota + "</td>";
                 tabel += "<td>" + data[i].ketua + "</td>";
                 tabel += "<td>" + data[i].lokasi + "</td>";
-                tabel += "<td>" + data[i].proker1 + "</td>";
-                tabel += "<td>" + data[i].proker2 + "</td>";
-                tabel += "<td>" + data[i].proker3 + "</td>";
+                // tabel += "<td>" + data[i].proker1 + "</td>";
+                // tabel += "<td>" + data[i].proker2 + "</td>";
+                // tabel += "<td>" + data[i].proker3 + "</td>";
                 tabel += "</tr>";
                 var marker = placeMarker({lat: parseFloat(data[i].latitude), lng: parseFloat(data[i].longitude)});
                 // console.log(marker);

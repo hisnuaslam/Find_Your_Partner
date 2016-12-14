@@ -14,9 +14,10 @@ while($row = mysqli_fetch_array($result)) {
       'kota'=> $row['kota'],
       'ketua'=> $row['ketua'],
       'lokasi'=> $row['lokasi'],
-      'proker1'=> $row['proker1'],
-      'proker2'=> $row['proker2'],
-      'proker3'=> $row['proker3'],
+      'tglmulai'=> $row['tglmulai'],
+      'tglscreening'=> $row['tglscreening'],
+      'tglpengumuman'=> $row['tglpengumuman'],
+      'tglakhir'=> $row['tglakhir']
     );
     array_push($data, $koordinat);
 }

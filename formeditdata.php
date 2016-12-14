@@ -16,24 +16,28 @@
         <input id="long" type="hidden" name="flong" />
         
         <div class="form-group">
-        <label>Kota<br><input type="text" name="fkota" /></label></div>
+        <label>Kota<br><input type="text" name="fkota" required autofocus/></label></div>
 
         <div class="form-group">
-        <label>Nama Ketua<br><input type="text" name="fketua"></label></div>
+        <label>Nama Ketua<br><input type="text" name="fketua" required autofocus></label></div>
 
         <div class="form-group">
-        <label>Alamat Daerah<br><input type="text" name="falamat"></label></div>
+        <label>Alamat Daerah<br><input type="text" name="falamat" required autofocus></label></div>
 
         <div class="form-group">
-        <label>Proker 1<br><input type="text" name="fproker1"></label></div>
+        <label>Tanggal Mulai<br><input type="date" name="ftglmulai" required autofocus></label></div>
+
+        
 
         <div class="form-group">
-        <label>Proker 2<br><input type="text" name="fproker2"></label></div>
-
+        <label>Tanggal Screening<br><input type="date" name="ftglscreening"></label></div>
+        
         <div class="form-group">
-        <label>Proker 3<br><input type="text" name="fproker3"></label></div>
-
+        <label>Tanggal Pengumuman<br><input type="date" name="ftglpengumuman"></label></div>
       </div>
+
+      <div class="form-group">
+        <label>Tanggal Berakhir<br><input type="date" name="ftglakhir" required autofocus></label></div>
 
     <div class="button-section">
      <input type="submit" name="query" value="Submit"><br><br><br>
