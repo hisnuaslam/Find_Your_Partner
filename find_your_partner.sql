@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2016 at 07:21 AM
+-- Generation Time: Dec 08, 2016 at 07:12 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.4
 
@@ -23,6 +23,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `joinlokasi`
+--
+
+CREATE TABLE `joinlokasi` (
+  `id` int(3) NOT NULL,
+  `nim` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lokasi`
 --
 
@@ -33,24 +44,32 @@ CREATE TABLE `lokasi` (
   `kota` varchar(30) NOT NULL,
   `ketua` varchar(40) NOT NULL,
   `lokasi` varchar(100) NOT NULL,
-  `proker1` varchar(1000) NOT NULL,
-  `proker2` varchar(1000) NOT NULL,
-  `proker3` varchar(1000) NOT NULL
+  `tglmulai` date NOT NULL,
+  `tglakhir` date NOT NULL,
+  `tglscreening` date NOT NULL,
+  `tglpengumuman` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `lokasi`
 --
 
-INSERT INTO `lokasi` (`id`, `latitude`, `longitude`, `kota`, `ketua`, `lokasi`, `proker1`, `proker2`, `proker3`) VALUES
-(2, '-6.765', '111.050', 'Pati', 'Hisnuaslam', 'Ds Muktiharjo Kec Margorejo', '', '', ''),
-(3, '-7.268', '112.731', 'Surabaya', 'Arif Farid ', 'Wetane Lumpur Lapindo', '', '', ''),
-(4, '-7.261', '112.742', 'Surabaya', 'Bonex', 'Ngarep Markas Bonex', '', '', ''),
-(5, '-6.438', '106.875', 'Jakarta', 'Nugroho', 'Mburine Monas, Ngulon Sithik', '', '', ''),
-(6, '-7.759', '110.682', 'Klaten', 'Hudacrot', 'mburi indomaret klaten', '', '', ''),
-(7, '-8.670', '115.216', 'Denpasar', 'Erlingga', 'Mburi omah walikota ngidul sithik cedhak bangjo', 'Pertanian : Irigasi sawah', 'Kesehatan : Sunat massal gratis', 'Teknologi : Pengenalan Sistem Operasi Linux'),
-(8, '-6.946', '106.935', 'Sukabumi', 'Muca', 'Sukakamu, Mburi pom bensin ', '', '', ''),
-(10, '-1.270', '116.873', 'Balikpapan', 'Mareta', 'belakang pom bensi deket indomaret', 'Pertanian : Reboisasi Hutan', 'Kesehatan : Berantas HIV', 'Teknologi : Internet masuk Desa (kerjasama dengan kominfo setempat)');
+INSERT INTO `lokasi` (`id`, `latitude`, `longitude`, `kota`, `ketua`, `lokasi`, `tglmulai`, `tglakhir`, `tglscreening`, `tglpengumuman`) VALUES
+(7, '-8.670', '115.216', 'Denpasar', 'Erlingga', 'Mburi omah walikota ngidul sithik cedhak bangjo', '2016-12-01', '2016-12-31', '2016-12-14', '2016-12-20'),
+(8, '-6.946', '106.935', 'Sukabumi', 'Muca', 'Sukakamu, Mburi pom bensin ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `uploadfoto`
+--
+
+CREATE TABLE `uploadfoto` (
+  `id` int(10) NOT NULL,
+  `file` varchar(200) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `size` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -62,18 +81,20 @@ CREATE TABLE `user` (
   `nim` varchar(8) NOT NULL,
   `username` varchar(12) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `level` int(2) NOT NULL,
-  `status` varchar(10) NOT NULL
+  `level` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`nim`, `username`, `password`, `level`, `status`) VALUES
-('M0514016', 'hisnuaslam', 'hisnuaslam', 1, 'belumjoin'),
-('M0514034', 'mujahidah', 'mujahidah', 2, 'belumjoin'),
-('m0514056', 'kucing', 'kucing', 2, 'belumjoin');
+INSERT INTO `user` (`nim`, `username`, `password`, `level`) VALUES
+('admin', 'admin', 'adminggwp', 3),
+('M0514001', 'johnlennon', 'johnlennon', 2),
+('M0514016', 'hisnuaslam', 'hisnuaslam', 1),
+('M0514034', 'mujahidah', 'mujahidah', 2),
+('M0514041', 'rafaokta', 'rafaokta', 1),
+('m0514056', 'kucing', 'kucing', 2);
 
 --
 -- Indexes for dumped tables
@@ -83,6 +104,12 @@ INSERT INTO `user` (`nim`, `username`, `password`, `level`, `status`) VALUES
 -- Indexes for table `lokasi`
 --
 ALTER TABLE `lokasi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `uploadfoto`
+--
+ALTER TABLE `uploadfoto`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -99,7 +126,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `lokasi`
 --
 ALTER TABLE `lokasi`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `uploadfoto`
+--
+ALTER TABLE `uploadfoto`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

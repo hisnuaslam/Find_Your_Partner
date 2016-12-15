@@ -1,7 +1,8 @@
 <!--header-->
 <?php include_once './header.php'; ?>
-<?php 
+<?php
     if(isset($_SESSION['level'] )) {
+      //memilih session apakah leader, member, atau administrator
         if($_SESSION['level'] == 1 )
         {
             header('Location:leader.php');
@@ -15,11 +16,10 @@
         {
             header('Location:administrator.php');
         }
-    } 
+    }
 
-   
+
 ?>
-
 
 <title>Find Your Partner</title>
 
@@ -45,26 +45,21 @@
 <div class="content-isi ">
     <!--Title Menu-->
     <div class="title-menu">
-        <!--Title Page-->
-        <div class="col-lg-9"><h1><!-- Selamat Datang ! --></h1></div><!--/Title Page-->
         <!--Title Direction-->
         <div class="col-lg-3">
-            
-                <div class="col-lg-3"><a href="login.php"><h3>Login</h3></a></div>
+          <div class="col-lg-3"><a href="login.php"><h3>Login</h3></a></div>
         </div><!--/Title Direction-->
     <!--Content Page-->
     <div class="col-lg-12">
         <div class="container">
         <!-- <div class="row"> -->
-              
-
-
               <?php include_once './map_index.php'; ?>
     <!--Content Page-->
 <script>
 window.onload = loadMarker();
 
 function loadMarker() {
+  //fungsi untuk menampilkan loadMarker
     $.ajax('datakoordinat_index.php', {
             'type':'GET'
         })

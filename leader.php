@@ -1,15 +1,15 @@
 <!--header-->
 <?php include_once './header.php'; ?>
 
-<?php 
+<?php
     if(isset($_SESSION['level'] )) {
         if($_SESSION['level'] != 1)
         {
             header('Location:errormessege.php');
 
         }
-        
-    } 
+
+    }
      else{
 
         header('Location:index.php');
@@ -26,7 +26,7 @@
             <ol class="breadcrumb">
                 <div class="col-lg-6"><a href="lihatdatadirileader.php">Lihat Data diri</a></div>
                 <div class="col-lg-6"><a href="downgrade.php">Downgrade</a></div>
-                <div class="col-lg-6"><a href=""></a></div>
+                <div class="col-lg-6"><a href="datamember.php">Data Member</a></div>
                 <div class="col-lg-1"><a href="logout.php">Logout</a></div>
         </div><!--/Title Direction-->
         <div class="clearfix"></div>
@@ -35,23 +35,6 @@
 
 <?php include_once './map_leader.php'; ?>
     <!--Content Page-->
-
-    <!--content-menu-->
-<!-- <div class="col-lg-3 content-menu">
-    <ul class="nav nav-pills nav-stacked collapsed">
-       
-        <li role="presentation" class="active" >
-            <a href="#" ><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>Mahasiswa</a>
-            <ul class="nav nav-stacked">
-                <li class="second-nav "><a href="verifikasidokumen.php">Verifikasi Dokumen</a></li>
-                <li class="second-nav"><a href="dokumenlolosverifikasi.php">Daftar Dokumen Lolos Verifikasi</a></li>
-                <li class="second-nav"><a href="logout.php">Logout</a></li>
-            </ul>
-        </li> 
-    </ul>
-</div> -->
-
-
 <script>
 window.onload = loadMarker();
 
@@ -100,13 +83,13 @@ function loadMarker() {
 
 <body id="home">
 
-  
+
 <!-- header area -->
 
 <!-- colored section -->
 <section id="order">
     <div class="wrapper clearfix">
-    
+
 <div id="container">
  <h2>Liat Info KKN yang tersedia</h2>
 
@@ -126,7 +109,7 @@ function loadMarker() {
 
 </section><!-- #end colored section -->
 
-<!-- footer area -->    
+<!-- footer area -->
 
 <!-- jQuery -->
 
@@ -141,12 +124,11 @@ function loadMarker() {
 <div class="col-lg-9 ">
 
     <div class="col-lg-12">
-        
+
         </div>
-        
+
     </div>
     <!--Content Page-->
 </div><!--Side Content-->
 <!--footer-->
 <?php include_once './footer.php'; ?>
-
