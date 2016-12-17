@@ -6,7 +6,7 @@
 <div class="footer">
     <div class="row-fluid">
         <hr>
-        <p>Created by : hisnuaslam</p>
+        <p>Created by : FYP Team</p>
     </div>
 </div>
 <!-- bootstrap js -->

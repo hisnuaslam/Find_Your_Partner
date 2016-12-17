@@ -6,7 +6,6 @@
         if($_SESSION['level'] == 1 )
         {
             header('Location:leader.php');
-
         }
         elseif($_SESSION['level'] == 2)
         {
@@ -17,14 +16,10 @@
             header('Location:administrator.php');
         }
     }
-
-
 ?>
-
 <title>Find Your Partner</title>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <style>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style>
         body {
             background-color:#eee;
         }
@@ -38,26 +33,26 @@
             padding:20px;
             margin-top:20px;
         }
-    </style>
-
-
+</style>
 <!--Side Content-->
 <div class="content-isi ">
-    <!--Title Menu-->
-    <div class="title-menu">
-        <!--Title Direction-->
-        <div class="col-lg-3">
-          <div class="col-lg-3"><a href="login.php"><h3>Login</h3></a></div>
-        </div><!--/Title Direction-->
-    <!--Content Page-->
-    <div class="col-lg-12">
-        <div class="container">
-        <!-- <div class="row"> -->
-              <?php include_once './map_index.php'; ?>
-    <!--Content Page-->
-<script>
+	<!--Title Menu-->
+	<div class="title-menu">
+		<!--Title Direction-->
+		<div class="col-lg-3">
+			<div class="col-lg-3">
+				<a href="login.php"><h3>Login</h3></a>
+			</div>
+		</div>
+		<!--/Title Direction-->
+		<!--Content Page-->
+		<div class="col-lg-12">
+			<div class="container">
+				<!-- <div class="row"> -->
+				<?php include_once './map_index.php'; ?>
+				<!--Content Page-->
+				<script>
 window.onload = loadMarker();
-
 function loadMarker() {
   //fungsi untuk menampilkan loadMarker
     $.ajax('datakoordinat_index.php', {
@@ -67,7 +62,7 @@ function loadMarker() {
             var tabel = "<div class='table-responsive'><table cellpadding='2' cellspacing='2' class='data_table'>"+
                         "<tr id='tr'>" +
                         "<td>ID</td>" +
-                        "<td> Latitude</td>" +
+                        "<td>Latitude</td>" +
                         "<td>Longitude</td>" +
                         "<td>Kota</td>" +
                         "<td>Ketua</td>" +
@@ -97,14 +92,12 @@ function loadMarker() {
             $('#txtHint').html(tabel);
         });
 }
-
-</script>
-    <!-- </div> -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    </div>
-    <!--Content Page-->
-</div><!--Side Content-->
-<!--footer-->
-<?php include_once './footer.php'; ?>
+				</script>
+				<!-- </div> -->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+				<script src="js/bootstrap.min.js"></script>
+			</div>
+			<!--Content Page--></div>
+		<!--Side Content-->
+		<!--footer-->
+		<?php include_once './footer.php'; ?>
