@@ -10,7 +10,7 @@
 
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script>
-$("#myModal").modal('hide');
+    //$("#myModal").modal('hide');
     var map, whitebox_window, infowindow;
       function initMap() {
         var uluru = {lat: -2.063, lng: 118.044};
@@ -45,6 +45,7 @@ $("#myModal").modal('hide');
                                                   + event.latLng.lat().toFixed(3)
                                                   + ' Current Lng: ' + event.latLng.lng().toFixed(3)
                                                   + '</p>';
+      });
     }
 
     function showInfoWindow(data, marker) {

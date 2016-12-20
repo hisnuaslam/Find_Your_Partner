@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2016 at 07:12 AM
+-- Generation Time: Dec 18, 2016 at 09:16 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.4
 
@@ -27,9 +27,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `joinlokasi` (
+  `nim` varchar(100) NOT NULL,
   `id` int(3) NOT NULL,
-  `nim` varchar(8) NOT NULL
+  `username` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `joinlokasi`
+--
+
+INSERT INTO `joinlokasi` (`nim`, `id`, `username`) VALUES
+('M0514031', 7, 'adamcupu'),
+('m0514056', 7, 'kucing');
 
 -- --------------------------------------------------------
 
@@ -56,7 +65,8 @@ CREATE TABLE `lokasi` (
 
 INSERT INTO `lokasi` (`id`, `latitude`, `longitude`, `kota`, `ketua`, `lokasi`, `tglmulai`, `tglakhir`, `tglscreening`, `tglpengumuman`) VALUES
 (7, '-8.670', '115.216', 'Denpasar', 'Erlingga', 'Mburi omah walikota ngidul sithik cedhak bangjo', '2016-12-01', '2016-12-31', '2016-12-14', '2016-12-20'),
-(8, '-6.946', '106.935', 'Sukabumi', 'Muca', 'Sukakamu, Mburi pom bensin ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00');
+(8, '-6.946', '106.935', 'Sukabumi', 'Muca', 'Sukakamu, Mburi pom bensin ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00'),
+(10, '-0.000', '113.291', 'Kalimantan', 'Rafa', 'Gak tau', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -92,6 +102,7 @@ INSERT INTO `user` (`nim`, `username`, `password`, `level`) VALUES
 ('admin', 'admin', 'adminggwp', 3),
 ('M0514001', 'johnlennon', 'johnlennon', 2),
 ('M0514016', 'hisnuaslam', 'hisnuaslam', 1),
+('M0514031', 'adamcupu', 'adamcupu', 2),
 ('M0514034', 'mujahidah', 'mujahidah', 2),
 ('M0514041', 'rafaokta', 'rafaokta', 1),
 ('m0514056', 'kucing', 'kucing', 2);
@@ -126,7 +137,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `lokasi`
 --
 ALTER TABLE `lokasi`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `uploadfoto`
 --
