@@ -1,4 +1,5 @@
-<!-- <div class="clearfix"></div> -->
+<!-- dibuang sayang -->
+<div class="clearfix"></div>
 <!--footer-->
 <div class="footer">
   <div class="row-fluid">

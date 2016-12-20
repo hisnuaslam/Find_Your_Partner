@@ -1,10 +1,9 @@
 <?php include_once './header.php'; ?>
-<?php 
+<?php
     if(isset($_SESSION['level'] )) {
         if($_SESSION['level'] == 1 )
         {
             header('Location:leader.php');
-
         }
         elseif($_SESSION['level'] == 2)
         {
@@ -14,26 +13,19 @@
         {
             header('Location:administrator.php');
         }
-        
-    } 
-
-   
+    }
 ?>
 <?php
                 if(isset($_POST['login'])){
                     include("koneksiall.php");
-                    
                     $username   = $_POST['username'];
                     $password   = $_POST['password'];
                     $level      = $_POST['level'];
-    
-                    
                     $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' AND password='$password'");
                     if(mysqli_num_rows($query) == 0){
                         echo '<div class="alert alert-danger">Upss...!!! Login gagal.</div>';
                     }else{
                         $row = mysqli_fetch_assoc($query);
-                        
                         if($row['level'] == 1 && $level == 1){
                             $_SESSION['username']=$username;
                             $_SESSION['nim']=$row['nim'];
@@ -54,9 +46,6 @@
                     }
                 }
                 ?>
-
-                
-
 <title>Find Your Partner</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -75,31 +64,29 @@
             margin-top:20px;
         }
     </style>
-
+    <!-- navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <div class="navbar-right">
+            <ul class="nav navbar-nav">
+                <li>
+                  <a href="login.php">
+                    <span class="glyphicon glyphicon-log-in"></span>
+                    Login
+                  </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ending navbar -->
 
 <!--Side Content-->
 <div class="content-isi ">
     <!--Title Menu-->
-    <div class="title-menu">
-        <!--Title Page-->
-        <div class="col-lg-9"><h1>Selamat Datang !</h1></div>
-        
-        <!--/Title Page-->
-        <!--Title Direction-->
-       
-       
-
-    </div><!--Title Menu-->
     <!--Content Page-->
     <div class="col-lg-12">
         <div class="container">
         <div class="row">
              <div class="login">
-                
-
-               
-                
-                
                 <form role="form" action="" method="post">
                     <div class="form-group">
                         <input type="text" name="username" class="form-control" placeholder="Username" required autofocus />
@@ -121,11 +108,8 @@
                     <a href="daftar.php">Klik Disini untuk mendaftar!</a>
                 </form>
             </div>
-
-    
         </div>
     </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     </div>

@@ -19,6 +19,7 @@
 ?>
 <title>Find Your Partner</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/AdminLTE.css" rel="stylesheet">
 <style>
         body {
             background-color:#eee;
@@ -36,15 +37,17 @@
 </style>
 
 <!-- navbar -->
-<nav class="navbar navbar-default">
-  <div class="container">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="index.php">Beranda</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
+<nav class="navbar navbar-static-top" role="navigation">
+    <div class="navbar-right">
+        <ul class="nav navbar-nav">
+            <li>
+              <a href="login.php">
+                <span class="glyphicon glyphicon-log-in"></span>
+                Login
+              </a>
+            </li>
+        </ul>
+    </div>
 </nav>
 <!-- ending navbar -->
 
@@ -98,7 +101,10 @@ function loadMarker() {
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 				<script src="js/bootstrap.min.js"></script>
 			</div>
-			<!--Content Page--></div>
+			<!--Content Page-->
+    </div>
+  </div>
+</div>
 		<!--Side Content-->
 		<!--footer-->
 		<?php include_once './footer.php'; ?>

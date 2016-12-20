@@ -14,11 +14,16 @@ and open the template in the editor.
   <title>Find Your Partner</title>
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/digilib-uns.css" rel="stylesheet">
+  <!-- font Awesome -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <!-- Ionicons -->
+  <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+  <!-- AdminLTE -->
+  <link href="css/AdminLTE.css" rel="stylesheet">
   <!--Font from Google-->
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat">
   <style>
-  .data_table
+  /*.data_table
   {
     margin:auto;
     border: 1px #333 solid;
@@ -43,26 +48,31 @@ and open the template in the editor.
   {
     text-align:center;
   border-bottom: 1px solid #999;
-  }
+  }*/
   </style>
 </head>
-<body>
+<body class="skin-black">
+  <header class="header">
+      <a href="index.php" class="logo">
+          Find Your Partner
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+  </header>
+
+  <!-- dibuang sayang -->
   <!--header-->
-  <div class="header">
-  	<div class="row-fluid">
+  <!-- <div class="header">
+  	<div class="row-fluid"> -->
   		<!--logo-header-->
-  		<div class="col-lg-2">
+  		<!-- <div class="col-lg-2">
   			<a href="index.php"><img src="img/logo-uns.png" height="60px"/></a>
-  		</div>
+  		</div> -->
   		<!--judul-header-->
-  		<div class="col-lg-10">
+  		<!-- <div class="col-lg-10">
   			<h1>FIND YOUR PARTNER</h1>
   		</div>
   	</div>
-  </div>
-
-<!-- dibuang sayang -->
-
+  </div> -->
 <!-- <div class="clearfix"></div> -->
 <!--header-navigation-->
 <!-- <div class="navigation">
