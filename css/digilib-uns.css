@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 14 Des 14, 7:56:49
     Author     : rowi
 */
@@ -60,8 +60,8 @@ body{
     height: auto;
 }
 
-.content-menu .nav-pills>li.active>a, 
-.content-menu .nav-pills>li.active>a:hover, 
+.content-menu .nav-pills>li.active>a,
+.content-menu .nav-pills>li.active>a:hover,
 .content-menu .nav-pills>li.active>a:focus{
     background: #032D40;
     border-radius: 0px;
@@ -79,8 +79,9 @@ body{
 }
 
 .content-isi{
-    //background: #f5f5f5;
+    background: #f5f5f5;
     min-height: 450px;
+    height: auto;
     padding: 20px;
 }
 
@@ -125,6 +126,3 @@ body{
     margin: 0;
     border-bottom: 1px #ddd solid;
 }
-
-
-

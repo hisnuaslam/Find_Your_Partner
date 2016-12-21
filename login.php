@@ -61,7 +61,7 @@
         .login {
             background-color:#fff;
             padding:20px;
-            margin-top:20px;
+            /*margin-top:20px;*/
         }
     </style>
     <!-- navbar -->

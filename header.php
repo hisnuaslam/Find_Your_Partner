@@ -13,6 +13,7 @@ and open the template in the editor.
   <link rel="Shortcut Icon" type="image/ico" href="img/icon-uns.png"/>
   <title>Find Your Partner</title>
   <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/footer-basic-centered.css">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- font Awesome -->
   <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -20,6 +21,7 @@ and open the template in the editor.
   <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
   <!-- AdminLTE -->
   <link href="css/AdminLTE.css" rel="stylesheet">
+
   <!--Font from Google-->
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat">
   <style>
