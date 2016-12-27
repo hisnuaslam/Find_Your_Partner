@@ -36,7 +36,7 @@ if($_POST){
         if($password != $cpass || $captcha != $_SESSION["code"]) {
             echo "<div class = 'alert alert-danger'>Password dan Confirm Password tidak Sesuai atau Captcha salah</div>";
         } else {
-            $sql = "INSERT INTO user VALUES ('$nim', '$username', '$password', '$leveluser')";
+            $sql = "INSERT INTO user (nim, username, password, level) VALUES ('$nim', '$username', '$password', '$leveluser')";
             $query = mysqli_query($koneksi, $sql);
 
             if($query) {

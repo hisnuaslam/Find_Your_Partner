@@ -53,18 +53,18 @@
       var content = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">' + data[0].kota + '</h1>'+
+            '<h1 id="firstHeading" class="firstHeading">' + data[0].nama_kota + '</h1>'+
             '<div id="bodyContent">'+
-            '<p><b>Ketua </b>,: ' + data[0].ketua + '</p>'+
-            '<p><b>Lokasi </b>,: ' + data[0].lokasi + '</p>'+
+            '<p><b>Ketua </b>,: ' + data[0].nim_ketua + '</p>'+
+            '<p><b>Lokasi </b>,: ' + data[0].alamat_lokasi + '</p>'+
             '<p><b>Tanggal Mulai Pendaftaran </b>,:</p>'+
-            '<p> ' + data[0].tglmulai + '</p>'+
+            '<p> ' + data[0].tgl_awal + '</p>'+
             '<p><b>Batas Akhir Pendaftaran </b>,:</p>'+
-            '<p> ' + data[0].tglakhir + '</p>'+
+            '<p> ' + data[0].tgl_akhir + '</p>'+
             '<p><b>Tanggal Screening </b>,:</p>'+
-            '<p> ' + data[0].tglscreening + '</p>'+
+            '<p> ' + data[0].tgl_screening + '</p>'+
             '<p><b>Pengumuman Pendaftaran</b>,:</p>'+
-            '<p> ' + data[0].tglpengumuman + '</p>'+
+            '<p> ' + data[0].tgl_pengumuman + '</p>'+
             '<button type="button"><a href="join.php?id='+ data[0].id_map +'">Join Now!</a></button>'+' '+' '+
             '<button type="button"><a href="lihat_partner.php">Lihat Partnermu!</a></button>'
             '</div>';

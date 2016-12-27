@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2016 at 09:16 AM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 7.0.4
+-- Generation Time: Dec 27, 2016 at 07:44 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,22 +23,13 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `joinlokasi`
+-- Table structure for table `join_lokasi`
 --
 
-CREATE TABLE `joinlokasi` (
-  `nim` varchar(100) NOT NULL,
-  `id` int(3) NOT NULL,
-  `username` varchar(200) NOT NULL
+CREATE TABLE `join_lokasi` (
+  `user_nim` varchar(12) NOT NULL,
+  `id_lokasi_terpilih` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `joinlokasi`
---
-
-INSERT INTO `joinlokasi` (`nim`, `id`, `username`) VALUES
-('M0514031', 7, 'adamcupu'),
-('m0514056', 7, 'kucing');
 
 -- --------------------------------------------------------
 
@@ -47,38 +38,39 @@ INSERT INTO `joinlokasi` (`nim`, `id`, `username`) VALUES
 --
 
 CREATE TABLE `lokasi` (
-  `id` int(4) NOT NULL,
+  `id` int(5) NOT NULL,
   `latitude` varchar(8) NOT NULL,
   `longitude` varchar(8) NOT NULL,
-  `kota` varchar(30) NOT NULL,
-  `ketua` varchar(40) NOT NULL,
-  `lokasi` varchar(100) NOT NULL,
-  `tglmulai` date NOT NULL,
-  `tglakhir` date NOT NULL,
-  `tglscreening` date NOT NULL,
-  `tglpengumuman` date NOT NULL
+  `nama_kota` varchar(30) NOT NULL,
+  `nim_ketua` varchar(12) NOT NULL,
+  `alamat_lokasi` varchar(60) NOT NULL,
+  `tgl_awal` date NOT NULL,
+  `tgl_screening` date NOT NULL,
+  `tgl_pengumuman` date NOT NULL,
+  `tgl_akhir` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `lokasi`
---
-
-INSERT INTO `lokasi` (`id`, `latitude`, `longitude`, `kota`, `ketua`, `lokasi`, `tglmulai`, `tglakhir`, `tglscreening`, `tglpengumuman`) VALUES
-(7, '-8.670', '115.216', 'Denpasar', 'Erlingga', 'Mburi omah walikota ngidul sithik cedhak bangjo', '2016-12-01', '2016-12-31', '2016-12-14', '2016-12-20'),
-(8, '-6.946', '106.935', 'Sukabumi', 'Muca', 'Sukakamu, Mburi pom bensin ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00'),
-(10, '-0.000', '113.291', 'Kalimantan', 'Rafa', 'Gak tau', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `uploadfoto`
+-- Table structure for table `mahasiswa`
 --
 
-CREATE TABLE `uploadfoto` (
-  `id` int(10) NOT NULL,
-  `file` varchar(200) NOT NULL,
-  `type` varchar(50) NOT NULL,
-  `size` int(11) NOT NULL
+CREATE TABLE `mahasiswa` (
+  `nim` varchar(12) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `prodi` varchar(60) NOT NULL,
+  `fakultas` varchar(60) NOT NULL,
+  `angkatan` int(4) NOT NULL,
+  `jenis_kelamin` varchar(10) NOT NULL,
+  `tempat_lahir` varchar(25) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `alamat` varchar(60) NOT NULL,
+  `telepon` int(15) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `sosmed` varchar(60) NOT NULL,
+  `agama` varchar(20) NOT NULL,
+  `kewarganegaraan` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -88,61 +80,71 @@ CREATE TABLE `uploadfoto` (
 --
 
 CREATE TABLE `user` (
-  `nim` varchar(8) NOT NULL,
-  `username` varchar(12) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `level` int(2) NOT NULL
+  `nim` varchar(12) NOT NULL,
+  `username` varchar(40) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `level` int(1) NOT NULL,
+  `status` varchar(20) DEFAULT NULL,
+  `nim_pengikut` varchar(12) DEFAULT NULL,
+  `id_lokasi` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`nim`, `username`, `password`, `level`) VALUES
-('admin', 'admin', 'adminggwp', 3),
-('M0514001', 'johnlennon', 'johnlennon', 2),
-('M0514016', 'hisnuaslam', 'hisnuaslam', 1),
-('M0514031', 'adamcupu', 'adamcupu', 2),
-('M0514034', 'mujahidah', 'mujahidah', 2),
-('M0514041', 'rafaokta', 'rafaokta', 1),
-('m0514056', 'kucing', 'kucing', 2);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `join_lokasi`
+--
+ALTER TABLE `join_lokasi`
+  ADD KEY `user_nim` (`user_nim`),
+  ADD KEY `id_lokasi_terpilih` (`id_lokasi_terpilih`);
+
+--
 -- Indexes for table `lokasi`
 --
 ALTER TABLE `lokasi`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nim_ketua` (`nim_ketua`);
 
 --
--- Indexes for table `uploadfoto`
+-- Indexes for table `mahasiswa`
 --
-ALTER TABLE `uploadfoto`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `mahasiswa`
+  ADD PRIMARY KEY (`nim`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`nim`);
+  ADD PRIMARY KEY (`nim`),
+  ADD KEY `id_lokasi` (`id_lokasi`),
+  ADD KEY `nim_pengikut` (`nim_pengikut`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Constraints for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `lokasi`
+-- Constraints for table `join_lokasi`
+--
+ALTER TABLE `join_lokasi`
+  ADD CONSTRAINT `join_lokasi_lokasi_fk` FOREIGN KEY (`id_lokasi_terpilih`) REFERENCES `lokasi` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `join_lokasi_user_fk` FOREIGN KEY (`user_nim`) REFERENCES `mahasiswa` (`nim`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Constraints for table `lokasi`
 --
 ALTER TABLE `lokasi`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  ADD CONSTRAINT `lokasi_user_fk` FOREIGN KEY (`nim_ketua`) REFERENCES `mahasiswa` (`nim`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
 --
--- AUTO_INCREMENT for table `uploadfoto`
+-- Constraints for table `user`
 --
-ALTER TABLE `uploadfoto`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_lokasi_fk` FOREIGN KEY (`id_lokasi`) REFERENCES `lokasi` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_mhs_fk` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

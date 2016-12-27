@@ -9,7 +9,7 @@
 
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script>
-      $("#myModal").modal('hide');
+      // $("#myModal").modal('hide');
       var map, whitebox_window, infowindow;
       function initMap() {
         var uluru = {lat: -2.063, lng: 118.044};
@@ -54,14 +54,14 @@
           var content = '<div id="content">'+
                 '<div id="siteNotice">'+
                 '</div>'+
-                '<h1 id="firstHeading" class="firstHeading">' + data[0].kota + '</h1>'+
+                '<h1 id="firstHeading" class="firstHeading">' + data[0].nama_kota + '</h1>'+
                 '<div id="bodyContent">'+
-                '<p><b>Ketua </b>,: ' + data[0].ketua + '</p>'+
-                '<p><b>Lokasi </b>,: ' + data[0].lokasi + '</p>'+
-                '<p><b>Tanggal Mulai Pendaftaran </b>,:' + data[0].tglmulai+'</p>'+
-                '<p><b>Batas Akhir Pendaftaran </b>,:' + data[0].tglakhir + '</p>'+
-                '<p><b>Tanggal Screening </b>,:' + data[0].tglscreening + '</p>'+
-                '<p><b>Pengumuman Pendaftaran</b>,:' + data[0].tglpengumuman + '</p>'
+                '<p><b>Ketua </b>,: ' + data[0].nim_ketua + '</p>'+
+                '<p><b>Lokasi </b>,: ' + data[0].alamat_lokasi + '</p>'+
+                '<p><b>Tanggal Mulai Pendaftaran </b>,:' + data[0].tgl_awal+'</p>'+
+                '<p><b>Batas Akhir Pendaftaran </b>,:' + data[0].tgl_akhir + '</p>'+
+                '<p><b>Tanggal Screening </b>,:' + data[0].tgl_screening + '</p>'+
+                '<p><b>Pengumuman Pendaftaran</b>,:' + data[0].tgl_pengumuman + '</p>'
                 '</div>'+
 
                 '</div>';

@@ -77,9 +77,9 @@
                             <th>Latitude</th>
                             <th>Longitude</th>
                             <th>Tgl Mulai Pendaftaran</th>
+                            <th>Batas Akhir Pendaftaran</th>
                             <th>Tgl Screening</th>
                             <th>Tgl Pengumuman</th>
-                            <th>Batas Akhir Pendaftaran</th>
                             <th>Action</th>
                           </tr>
                       </thead>
@@ -98,14 +98,14 @@
                                 {
                             ?>
                             <tr>
-                              <td><?php echo $row['kota']; ?></td>
-                              <td><?php echo $row['ketua'] ?></td>
+                              <td><?php echo $row['nama_kota']; ?></td>
+                              <td><?php echo $row['nim_ketua'] ?></td>
                               <td><?php echo $row['latitude'] ?></td>
                               <td><?php echo $row['longitude'] ?></td>
-                              <td><?php echo $row['tglmulai'] ?></td>
-                              <td><?php echo $row['tglscreening'] ?></td>
-                              <td><?php echo $row['tglpengumuman'] ?></td>
-                              <td><?php echo $row['tglakhir'] ?></td>
+                              <td><?php echo $row['tgl_awal'] ?></td>
+                              <td><?php echo $row['tgl_akhir'] ?></td>
+                              <td><?php echo $row['tgl_screening'] ?></td>
+                              <td><?php echo $row['tgl_pengumuman'] ?></td>
                               <td><?php $id = $row['id']; echo "<button onclick = 'delete_mapmarker(\"$id\");'  class='btn btn-danger'>Delete</button>"; ?></td>
                             </tr>
                           </tr>

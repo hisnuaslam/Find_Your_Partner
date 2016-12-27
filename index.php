@@ -110,9 +110,9 @@
 			                tabel += "<td>" + data[i].id + "</td>";
 			                tabel += "<td>" + data[i].latitude + "</td>";
 			                tabel += "<td>" + data[i].longitude + "</td>";
-			                tabel += "<td>" + data[i].kota + "</td>";
-			                tabel += "<td>" + data[i].ketua + "</td>";
-			                tabel += "<td>" + data[i].lokasi + "</td>";
+			                tabel += "<td>" + data[i].nama_kota + "</td>";
+			                tabel += "<td>" + data[i].nim_ketua + "</td>";
+			                tabel += "<td>" + data[i].alamat_lokasi + "</td>";
 			                tabel += "</tr>";
 			                var marker = placeMarker({lat: parseFloat(data[i].latitude), lng: parseFloat(data[i].longitude)});
 			                // console.log(marker);
