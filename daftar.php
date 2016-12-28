@@ -112,7 +112,7 @@ if($_POST){
                     <div class="panel-heading">
                         <div class="panel-title">
                             <!-- <i class="glyphicon glyphicon-wrench pull-right"></i> -->
-                            <h4>Login</h4>
+                            <h4>Daftar</h4>
                         </div>
                     </div>
                     <div class="panel-body">

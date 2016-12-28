@@ -57,7 +57,7 @@
             <ul class="nav nav-stacked">
                 <ul class="nav nav-stacked collapse in" id="userMenu">
                 	<li class="active"> <a href="index.php"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                  <li><a href="lihatdatadirileader.php.php"><i class="glyphicon glyphicon-user"></i> Lihat Data Diri</a></li>
+                  <li><a href="datadirileader.php"><i class="glyphicon glyphicon-user"></i> Lihat Data Diri</a></li>
                   <li><a href="downgrade.php"><i class="glyphicon glyphicon-circle-arrow-down"></i> Downgrade</a></li>
                   <li><a href="datamember.php"><i class="glyphicon glyphicon-file"></i> Data Member</a></li>
                   <li><a href="logout.php"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
@@ -107,9 +107,9 @@
                       tabel += "<td>" + data[i].id + "</td>";
                       tabel += "<td>" + data[i].latitude + "</td>";
                       tabel += "<td>" + data[i].longitude + "</td>";
-                      tabel += "<td>" + data[i].kota + "</td>";
-                      tabel += "<td>" + data[i].ketua + "</td>";
-                      tabel += "<td>" + data[i].lokasi + "</td>";
+                      tabel += "<td>" + data[i].nama_kota + "</td>";
+                      tabel += "<td>" + data[i].nim_ketua + "</td>";
+                      tabel += "<td>" + data[i].alamat_lokasi + "</td>";
                       tabel += "</tr>";
                       var marker = placeMarker({lat: parseFloat(data[i].latitude), lng: parseFloat(data[i].longitude)});
                       addClickListener(marker);

@@ -32,13 +32,29 @@
           google.maps.event.addListener(marker, "click", function (event) {
             var lat=event.latLng.lat().toFixed(3);
             var lng = event.latLng.lng().toFixed(3);
+            var x = 0;
 
-            $.ajax("datakoordinat_member.php",{
-              type:"GET",
-              data:{"lat":lat, "long":lng}
+            //ini gak tau kenapa error sehingga data tidak bisa didapatkan
+            // $.ajax("datakoordinat_member.php",{
+            //   type:"GET",
+            //   data:{"lat":lat, "long":lng}
+            // })
+            $.get("datakoordinat_member.php", function(data){
+              //digunakan untuk mendapatkan variabel 'data'
+              //sebagai pengganti di atasnya
             })
             .done(function(data){
-              showInfoWindow(data, marker);
+              for (var i = 0; i < data.length; i++) {
+                //untuk mencari latitude dan longitude dari database
+                var latitude = data[i].latitude;
+                latitude = parseFloat(latitude).toFixed(3); //dibulatkan biar sama
+                var longitude = data[i].longitude;
+                longitude = parseFloat(longitude).toFixed(3);
+                if (latitude==lat && longitude==lng) {
+                  x=i;
+                }
+              }
+              showInfoWindow(data, marker, x);
             });
 
             document.getElementById('current').innerHTML = '<p>Marker dropped: Current Lat: '
@@ -48,20 +64,19 @@
           });
         }
 
-        function showInfoWindow(data, marker) {
+        function showInfoWindow(data, marker, x) {
           //setelah di-klik, maka menampilkan data di bawah ini
-          console.log(data);
           var content = '<div id="content">'+
                 '<div id="siteNotice">'+
                 '</div>'+
-                '<h1 id="firstHeading" class="firstHeading">' + data[0].nama_kota + '</h1>'+
+                '<h1 id="firstHeading" class="firstHeading">' + data[x].nama_kota + '</h1>'+
                 '<div id="bodyContent">'+
-                '<p><b>Ketua </b>,: ' + data[0].nim_ketua + '</p>'+
-                '<p><b>Lokasi </b>,: ' + data[0].alamat_lokasi + '</p>'+
-                '<p><b>Tanggal Mulai Pendaftaran </b>,:' + data[0].tgl_awal+'</p>'+
-                '<p><b>Batas Akhir Pendaftaran </b>,:' + data[0].tgl_akhir + '</p>'+
-                '<p><b>Tanggal Screening </b>,:' + data[0].tgl_screening + '</p>'+
-                '<p><b>Pengumuman Pendaftaran</b>,:' + data[0].tgl_pengumuman + '</p>'
+                '<p><b>Ketua </b>,: ' + data[x].nim_ketua + '</p>'+
+                '<p><b>Lokasi </b>,: ' + data[x].alamat_lokasi + '</p>'+
+                '<p><b>Tanggal Mulai Pendaftaran </b>,:' + data[x].tgl_awal+'</p>'+
+                '<p><b>Batas Akhir Pendaftaran </b>,:' + data[x].tgl_akhir + '</p>'+
+                '<p><b>Tanggal Screening </b>,:' + data[x].tgl_screening + '</p>'+
+                '<p><b>Pengumuman Pendaftaran</b>,:' + data[x].tgl_pengumuman + '</p>'
                 '</div>'+
 
                 '</div>';

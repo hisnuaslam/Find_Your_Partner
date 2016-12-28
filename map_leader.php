@@ -9,7 +9,7 @@
 <div id="current">Belum ada Kordinat</div>
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 <script>
-$("#myModal").modal('hide');
+// $("#myModal").modal('hide');
     var map, whitebox_window, infowindow;
       function initMap() {
         var uluru = {lat: -2.063, lng: 118.044};
