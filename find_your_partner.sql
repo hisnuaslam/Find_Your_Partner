@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2016 at 07:48 PM
+-- Generation Time: Dec 30, 2016 at 10:48 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -96,7 +96,7 @@ INSERT INTO `mahasiswa` (`nim`, `nama`, `prodi`, `fakultas`, `angkatan`, `jenis_
 ('M0514016', 'Figur Hisnu Aslam', 'Informatika', 'Fakultas Matematika dan Ilmu Pengetahuan Alam', 2014, 'Laki-laki', 'Pati', '1996-03-21', 'Desa Joyotakan Kecamatan Pesanggrahan Pati', 638456, 'aslam.figur@gmail.com', 'FB: Figur Hisnu Aslam\r\nIG: @hisnuaslam', 'Islam', 'Indonesia'),
 ('M0514026', 'Kartini Aprilia', 'Informatika', 'Fakultas Matematika dan Ilmu Pengetahuan Alam', 2014, 'Perempuan', 'Kendari', '1996-04-21', 'Jl. Kendari nomor 5 Kendari', 890324, 'kartini.aprilia@gmail.com', 'FB: Kartini Aprilia,\r\nTW: @kartiniapril', 'Islam', 'Indonesia'),
 ('M0514031', 'Muhammad Adam Fahmil ''Ilmi', 'Informatika', 'Fakultas Matematika dan Ilmu Pengetahuan Alam', 2014, 'Laki-laki', 'Surakarta', '1996-06-20', 'Jl. Tiga Negeri nomor 2 Laweyan Solo', 739269, 'batik.adam@gmail.com', 'FB: Muhammad Adam Fahmil ''Ilmi', 'Islam', 'Indonesia'),
-('M0514034', 'Mujahidah Showafah', 'Informatika', 'Fakultas Matematika dan Ilmu Pengetahuan Alam', 2014, 'Perempuan', 'Sukabumi', '1996-06-19', 'Jl. Ir. Soekarno Sukabumi Jawa Barat', 574890, 'mujahidah.shwfh@gmail.com', 'FB: Mujahidah Showafah', 'Islam', 'Indonesia'),
+('M0514034', 'Mujahidah Showafah', 'Informatika', 'Fakultas Matematika dan Ilmu Pengetahuan Alam', 2014, 'Perempuan', 'Sukabumi', '1996-06-12', 'Jl. Ir. Soekarno Sukabumi Jawa Barat', 574890, 'mujahidah.mumuj@gmail.com', 'FB: Mujahidah Showafah', 'Islam', 'Indonesia'),
 ('M0514042', 'Rafa Oktarinda', 'Informatika', 'Fakultas Matematika dan Ilmu Pengetahuan Alam', 2014, 'Perempuan', 'Depok', '1996-10-09', 'Jl. Permata Hati nomor 1 Depok', 5672938, 'rafa.okta@gmail.com', 'FB: Rafa Oktarinda,\r\nIG: @rafaokta', 'Islam', 'Indonesia');
 
 -- --------------------------------------------------------

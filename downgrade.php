@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php
     if(isset($_SESSION['level'] )) {
-        if($_SESSION['level'] != 2)
+        if($_SESSION['level'] != 1)
         {
             header('Location:errormessege.php');
         }
@@ -9,6 +9,8 @@
      else{
         header('Location:index.php');
     }
+    include ("fungsi.php");
+    $data = getData($_SESSION['username']); //digunakan sebagai primary key
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,8 +58,10 @@
             <!-- Left column -->
             <ul class="nav nav-stacked">
                 <ul class="nav nav-stacked collapse in" id="userMenu">
-                	<li class="active"> <a href="index.php"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                  <li><a href="datadirimember.php"><i class="glyphicon glyphicon-user"></i> Lihat Data Diri</a></li>
+                	<li> <a href="index.php"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                  <li><a href="datadirileader.php"><i class="glyphicon glyphicon-user"></i> Lihat Data Diri</a></li>
+                  <li class="active"><a href="downgrade.php"><i class="glyphicon glyphicon-circle-arrow-down"></i> Downgrade</a></li>
+                  <li><a href="datamember.php"><i class="glyphicon glyphicon-file"></i> Data Member</a></li>
                   <li><a href="logout.php"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
                 </ul>
             </ul>
@@ -65,11 +69,11 @@
         <!-- /col-2 -->
         <div class="col-sm-10">
             <!-- column 2 -->
-            <strong><i class="glyphicon glyphicon-map-marker"></i> Melihat Peta Lokasi</strong>
+            <strong><i class="glyphicon glyphicon-circle-arrow-down"></i> Downgrade</strong>
             <hr>
 
             <div class="row">
-                <?php include_once './map_member.php'; ?>
+
             </div>
             <!--/row-->
         </div>
@@ -84,37 +88,5 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/scripts.js"></script>
-    <script>
-    window.onload = loadMarker();
-    function loadMarker() {
-        $.ajax('datakoordinat_member.php', {
-                'type':'GET'
-            })
-            .done(function(data) {
-                var tabel = "<div class='table-responsive'><table cellpadding='2' cellspacing='2' class='data_table'>"+
-                            "<tr id='tr'>" +
-                            "<td>ID</td>" +
-                            "<td>Latitude</td>" +
-                            "<td>Longitude</td>" +
-                            "<td>Kota</td>" +
-                            "<td>Ketua</td>" +
-                            "<td>Lokasi</td>" +
-                            "</tr>";
-                for (var i = 0; i < data.length; i++) {
-                    tabel += "<tr id='tr2'>";
-                    tabel += "<td>" + data[i].id + "</td>";
-                    tabel += "<td>" + data[i].latitude + "</td>";
-                    tabel += "<td>" + data[i].longitude + "</td>";
-                    tabel += "<td>" + data[i].nama_kota + "</td>";
-                    tabel += "<td>" + data[i].nim_ketua + "</td>";
-                    tabel += "<td>" + data[i].alamat_lokasi + "</td>";
-                    tabel += "</tr>";
-                    var marker = placeMarker({lat: parseFloat(data[i].latitude), lng: parseFloat(data[i].longitude)});
-                    addClickListener(marker);
-                };
-                $('#txtHint').html(tabel);
-            });
-    }
-		</script>
 	</body>
 </html>
