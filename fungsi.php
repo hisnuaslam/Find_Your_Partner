@@ -19,4 +19,19 @@
 		return null;
 	}
 
+	function getDataToDowngrade($username){
+		global $koneksi;
+		$sql = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.prodi, mahasiswa.fakultas, user.level, lokasi.nama_kota, lokasi.alamat_lokasi
+            FROM mahasiswa, user, lokasi
+						WHERE mahasiswa.nim = user.nim AND user.username = '$username' AND lokasi.nim_ketua = user.nim";
+    // $sql = "SELECT * FROM user WHERE username = '$username'";
+    $result = mysqli_query($koneksi, $sql);
+
+		if (mysqli_num_rows($result) > 0) { //melihat ada berapa baris yang berhasil diambil
+			$row = mysqli_fetch_assoc($result); //mengambil data dalam bentuk array
+			return $row;
+		}
+		return null;
+	}
+
  ?>

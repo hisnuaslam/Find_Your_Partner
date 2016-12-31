@@ -10,7 +10,7 @@
         header('Location:index.php');
     }
     include ("fungsi.php");
-    $data = getData($_SESSION['username']); //digunakan sebagai primary key
+    $data = getDataToDowngrade($_SESSION['username']); //digunakan sebagai primary key
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +73,61 @@
             <hr>
 
             <div class="row">
-
+              <div class="table-responsive">
+                  <table class="table table-striped">
+                      <thead>
+                          <tr>
+                            <th></th>
+                            <th>Keterangan</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><b>NIM</b></td>
+                          <td><?php echo $data['nim']; ?></td>
+                        </tr>
+                        <tr>
+                          <td><b>Nama</b></td>
+                          <td><?php echo $data['nama']; ?></td>
+                        </tr>
+                        <tr>
+                          <td><b>Program Studi</b></td>
+                          <td><?php echo $data['prodi']; ?></td>
+                        </tr>
+                        <tr>
+                          <td><b>Fakultas</b></td>
+                          <td><?php echo $data['fakultas']; ?></td>
+                        </tr>
+                        <tr>
+                          <td><b>Level</b></td>
+                          <td>
+                            <?php
+                              if($data['level']==1){
+                                echo "Leader";
+                              } else {
+                                echo "-";
+                              }
+                             ?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><b>Kota</b></td>
+                          <td><?php echo $data['nama_kota']; ?></td>
+                        </tr>
+                        <tr>
+                          <td><b>Alamat Lokasi</b></td>
+                          <td><?php echo $data['alamat_lokasi']; ?></td>
+                        </tr>
+                        <tr>
+                          <td><b>Downgrade Level</b></td>
+                          <td>
+                            <?php $nim_ubah = $data['nim']; echo "<button onclick = 'ubah_level(\"$nim_ubah\");'  class='btn btn-danger'>Downgrade</button>"; ?>
+                            </br>* Ingat! Level tidak bisa diubah kembali!
+                          </td>
+                        </tr>
+                      </tbody>
+                  </table>
+              </div>
             </div>
             <!--/row-->
         </div>
@@ -88,5 +142,16 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/scripts.js"></script>
+    <script type='text/javascript'>
+      function ubah_level(nim_ubah){
+
+          var answer = confirm('Apakah Anda yakin untuk menjadi Member?');
+          if (answer){
+              // if user clicked ok,
+              // pass the id to delete.php and execute the delete query
+              window.location = 'dodowngrade.php?nim_ubah=' + nim_ubah;
+          }
+      }
+    </script>
 	</body>
 </html>
